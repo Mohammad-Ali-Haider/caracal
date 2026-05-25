@@ -8,9 +8,11 @@ FROM redis:8-alpine@sha256:69f2c586c8a7e9cce4ae1ee9bbaf60bc4bb5f4bb3880e4ed022b1
 
 RUN apk add --no-cache tini
 COPY redis.conf /etc/caracal/redis.conf
-COPY --chmod=0755 entrypoint.sh /usr/local/bin/caracal-redis-entrypoint
-COPY --chmod=0755 provision-streams.sh /usr/local/bin/caracal-provision-streams
-RUN mkdir -p /run/caracal && chown -R redis:redis /etc/caracal /run/caracal
+COPY entrypoint.sh /usr/local/bin/caracal-redis-entrypoint
+COPY provision-streams.sh /usr/local/bin/caracal-provision-streams
+RUN chmod 0755 /usr/local/bin/caracal-redis-entrypoint /usr/local/bin/caracal-provision-streams \
+ && mkdir -p /run/caracal \
+ && chown -R redis:redis /etc/caracal /run/caracal
 
 USER redis
 EXPOSE 6379

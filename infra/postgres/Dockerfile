@@ -12,6 +12,7 @@ ENV POSTGRES_DB=caracal \
     POSTGRES_INITDB_ARGS="--data-checksums --auth-host=scram-sha-256"
 
 COPY migrations/ /migrations/
-COPY --chmod=0755 scripts/migrate.sh /usr/local/bin/caracal-migrate
+COPY scripts/migrate.sh /usr/local/bin/caracal-migrate
+RUN chmod 0755 /usr/local/bin/caracal-migrate
 
 EXPOSE 5432
