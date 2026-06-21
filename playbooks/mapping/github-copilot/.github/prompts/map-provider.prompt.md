@@ -13,6 +13,8 @@ Steps:
 2. Ask for missing provider type, labels, helper text, placeholders, section headings, and setup steps.
 3. Ask whether the provider is creating a client, application, API key, token, secret, or connector.
 4. Validate with Caracal docs and official provider docs.
-5. Return the standard field mapping format.
+5. Ask for more evidence when labels or docs are incomplete instead of guessing.
+6. Return the standard field mapping format.
 
 Never repeat raw secrets.
+Do not generate mock provider configs unless the user explicitly asks for examples.

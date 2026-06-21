@@ -16,3 +16,4 @@ Steps:
 5. Tell the user which visible Caracal Console field receives each provider value.
 
 Never ask for raw secrets in chat.
+Do not invent onboarding steps that are not supported by the docs or visible Console fields.

@@ -10,6 +10,8 @@ description: "Use when mapping an external provider dashboard, OAuth client, API
 - Map provider terminology only to visible Caracal Console provider fields.
 - Keep provider credentials off resource fields.
 - Never reveal raw secrets.
+- Ask for more labels, screenshots, or helper text when evidence is incomplete instead of guessing.
+- Do not generate sample provider configs unless the user explicitly asks for examples.
 
 Output one mapping block per field:
 

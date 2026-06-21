@@ -13,4 +13,7 @@ Steps:
 2. Ask for missing labels, helper text, placeholders, selected provider, scopes, and upstream target.
 3. Validate with Caracal docs.
 4. Keep resource values separate from provider credential values.
-5. Return the standard field mapping format.
+5. Ask for more evidence when labels or docs are incomplete instead of guessing.
+6. Return the standard field mapping format.
+
+Do not generate sample resource values unless the user explicitly asks.

@@ -16,3 +16,4 @@ Steps:
 5. Report missing, unsupported, misplaced, ambiguous, or unverified values.
 
 Keep the review short and field-focused.
+Warn the user when credentials were detected and continue with masked values only.

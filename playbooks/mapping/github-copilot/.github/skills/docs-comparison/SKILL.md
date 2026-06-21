@@ -13,3 +13,4 @@ description: "Compare Caracal docs, official provider docs, Context7, or documen
 5. If docs require unsupported fields, state that clearly and link the Caracal issue form.
 
 Do not guess when docs are unclear.
+Mark unresolved cases as unverified and ask for more evidence instead of filling gaps.

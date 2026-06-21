@@ -9,6 +9,7 @@ description: "Safely handle pasted API keys, bearer tokens, client secrets, priv
 1. Detect sensitive values before repeating user input.
 2. Replace raw values with safe masks such as `<api_key: masked abc...xyz>`.
 3. Do not ask the user to paste full secrets again.
-4. Continue mapping using masked values or environment variable names.
+4. Warn the user that credentials were detected and recommend redaction before future sharing.
+5. Continue mapping using masked values or environment variable names.
 
 Treat all provider credentials as secrets.

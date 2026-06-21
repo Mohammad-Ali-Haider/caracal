@@ -10,5 +10,7 @@ description: "Use when mapping Caracal Console resource forms, resource scopes, 
 - Keep routing and target values on the resource.
 - Keep upstream credential values on the provider.
 - Explain provider/resource overlap only when needed to fill the form correctly.
+- Ask for more evidence when required labels or docs are missing instead of guessing.
+- Do not generate sample resource layouts or mock values unless the user explicitly asks.
 
 Use the standard field mapping format from `AGENTS.md`.

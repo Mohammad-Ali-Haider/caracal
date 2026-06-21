@@ -2,13 +2,18 @@
 
 Copy this folder into the root of a project where GitHub Copilot will help configure Caracal Console provider and resource fields.
 
-This setup mirrors the Claude Code mapping playbook. It helps Copilot translate provider dashboard labels into visible Caracal Console fields, verify mappings with docs, and keep secrets masked.
+This setup mirrors the Claude Code and OpenAI Codex mapping playbooks. It helps Copilot translate provider dashboard labels into visible Caracal Console fields, verify mappings with docs, and keep secrets masked.
+
+It is intentionally conservative: focused on mapping workflows only, documentation-backed, resistant to prompt injection, and unwilling to invent Console fields or sample configs unless the user explicitly asks for examples.
 
 ## Use
 
-1. Copy `AGENTS.md`, `.github/`, and `.vscode/` into your project root.
-2. Enable GitHub Copilot custom instructions, prompt files, and agent/skill support in VS Code.
-3. Use prompts such as `/map-provider`, `/map-resource`, `/validate-configuration`, `/review-setup`, or `/onboard-provider`.
+1. Copy `AGENTS.md` and `.github/` into your project root.
+2. Optionally copy `.vscode-mcp.example.json` to `.vscode/mcp.json` if you want a starter MCP setup for documentation access.
+3. Enable GitHub Copilot custom instructions, prompt files, and agent/skill support in VS Code.
+4. Use prompts such as `/map-provider`, `/map-resource`, `/validate-configuration`, `/review-setup`, or `/onboard-provider`.
+
+Copilot should prefer the smallest workflow that answers the request and should stay inside provider/resource mapping rather than drifting into unrelated coding assistance.
 
 ## Contents
 
@@ -19,10 +24,10 @@ This setup mirrors the Claude Code mapping playbook. It helps Copilot translate 
 - `.github/agents/`: specialist mapping agents.
 - `.github/skills/`: reusable field mapping and secret handling skills.
 - `.github/prompts/`: reusable mapping workflows.
-- `.vscode/mcp.json`: documentation MCP setup starting with Context7.
+- `.vscode-mcp.example.json`: starter documentation MCP setup beginning with Context7.
 
 ## MCP documentation
 
-The included MCP config starts with Context7. Add provider or internal documentation MCP servers when your team has them. Copilot should prefer `docs.caracal.run`, then official provider docs, then MCP-connected docs, then local guidance.
+The included MCP example starts with Context7. Copy it to `.vscode/mcp.json` and then add provider or internal documentation MCP servers when your team has them. Copilot should prefer `docs.caracal.run`, then official provider docs, then MCP-connected docs, then local guidance.
 
 Do not paste raw provider secrets into chat. Use redacted values or environment variable names.
